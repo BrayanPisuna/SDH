@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="plantilla/template::head">
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+
+<body>
+<header th:replace="plantilla/template :: header"></header>
+
+
+<div class="container">
+
+	<br>
+	 <h2>INFORME DE EQUIPO</h2>
+    
+     <br>
+	
+	<form th:action="@{/views/informeequipo/save}" th:object="${informeequipo}" method="POST" >
+  
+  	<div class="form-row">
+    
+    
+    <input type="hidden" th:field="*{idinformeequipo}">
+    
+    	<div class="form-group col-md-3">
+      		<label for="nombre">Fecha de Requerimiento</label>
+      		<input type="date" class="form-control" id="nombre" th:field="*{fecharequerimiento}">
+    	</div>
+    	<div class="form-group col-md-3">
+      		<label for="nombre">Fecha de Atención</label>
+      		<input type="date" class="form-control" id="nombre" th:field="*{fechaatencion}">
+    	</div>
+    	
+    	<div class="form-group col-md-3">
+      		
+      		      		
+      		<input type="hidden" class="form-control" id="idequ1"
+      		th:value="${idequipo}"
+      		>
+      			<input type="hidden" class="form-control" id="idequ" th:field="*{idequipo}"
+      		>
+    	</div>
+    	
+ 	 </div>
+ 	 
+ 	 	<div class="form-row">
+    
+    	<div class="form-group col-md-6">
+      		<label for="marca">Persona Encargada</label>
+      		<input type="text" class="form-control" id="marca" th:field="*{personaencargada}">
+    	</div>
+    	<div class="form-group col-md-6">
+      		<label for="modelo">Novedades </label>
+      		<input type="text" class="form-control" id="modelo" th:field="*{novedadessolicitud}">
+    	</div>
+    	
+ 	 </div>
+ 	 
+ 	 	<div class="form-row">
+    
+    	<div class="form-group col-md-6">
+      		<label for="serie">Actividades</label>
+      		<input type="text" class="form-control" id="serie" th:field="*{actividades}" >
+    	</div>
+    	<div class="form-group col-md-6">
+      		<label for="estado">Conclusión</label>
+      		<input type="text" class="form-control" id="estado" th:field="*{conclusiones}" >
+    	</div>
+    	
+ 	 </div>
+ 	 
+ 	 <div class="form-row">
+    
+    	<div class="form-group col-md-6">
+      		<label for="serie">Archivos</label>
+      		<input type="file" name="file" class="form-control" id="archivos" th:field="*{archivos}" >
+    	</div>
+    	
+    	
+ 	 </div>
+ 	 
+ 	 
+
+  <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+
+
+
+
+</div>
+
+
+<footer th:replace="plantilla/template :: footer">
+
+<script type="text/javascript" th:src="@{/js/jquery-3.5.1.slim.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+
+</footer>
+</body>
+</html>

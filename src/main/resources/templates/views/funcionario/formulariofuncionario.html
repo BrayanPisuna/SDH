@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="plantilla/template::head">
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+
+<body>
+<header th:replace="plantilla/template :: header"></header>
+
+<div class="container">
+
+	<br>
+	 <h2>Funcionarios</h2>
+  
+     <br>
+	<form th:action="@{/views/funcionario/save}" th:object="${funcionario}" method="POST">
+  
+  	<div class="form-row">
+    
+    
+    <input type="hidden" th:field="*{idfuncionario}">
+    
+    	<div class="form-group col-md-6">
+      		<label for="nombre">Nombres</label>
+      		<input type="text" class="form-control" id="nombre" th:field="*{nombres}" required="required">
+    	</div>
+    	
+    	<div class="form-group col-md-6">
+      		<label for="apellidos">Apellidos</label>
+      		<input type="text" class="form-control" id="apellidos" th:field="*{apellidos}" required="required">
+    	</div>
+ 	 </div>
+ 	 
+ 	 	<div class="form-row">
+    
+    	<div class="form-group col-md-4">
+      		<label for="marca">Cédula</label>
+      		<input type="text" class="form-control" id="marca" th:field="*{cedula}" required="required">
+    	</div>
+    	<div class="form-group col-md-4">
+      		<label for="modelo">Cargo</label>
+      		<input type="text" class="form-control" id="modelo" th:field="*{cargo}" required="required">
+    	</div>
+    	
+    	<div class="form-group col-md-4">
+      		<label for="modelo">Correo</label>
+      		<input type="text" class="form-control" id="modelo" th:field="*{correo}" required="required">
+    	</div>
+    	
+ 	 </div>
+ 	 
+ 	 	<div class="form-row">
+    
+    	<div class="form-group col-md-6">
+      		<label for="serie">Telefono</label>
+      		<input type="text" class="form-control" id="serie" th:field="*{telefono}" required="required"  >
+    	</div>
+    	
+    	  <div class="form-group col-md-6">
+                        <label for="Nombre">Zona</label>
+                        <select th:field="*{idzonal}" class="form-control ">
+                            <option th:each="zona:${zona}"
+                            th:value="${zona.idzonal}"
+                            th:text="${zona.nombre}"
+                            /> 
+                          </select>
+                    </div>
+    
+    	</div>
+ 	 
+
+  <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+
+
+
+
+</div>
+
+
+
+
+
+<footer th:replace="plantilla/template :: footer">
+
+<script type="text/javascript" th:src="@{/js/jquery-3.5.1.slim.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+
+</footer>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="plantilla/template::head">
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+
+<body>
+<header th:replace="plantilla/template :: header"></header>
+
+
+
+<div class="container">
+
+	<br>
+	 <h2>Software</h2>
+    
+    <div class="container">
+  			<div class="row">
+   				 <div class="col-sm-9 ">
+      				  <p>Aquí ingrese las especificaciones del software</p>
+   			 	 </div>
+    
+    			<div class="col-sm-3 ">			 
+						 <a class="btn btn-info " th:href="@{/views/software/}" role="button">Atras</a>	
+    			</div>
+ 			
+ 			 </div>
+	</div>
+    
+    
+
+     
+				
+					
+     <br>
+	<form th:action="@{/views/software/save}" th:object="${software}" method="POST">
+  
+  	<div class="form-row">
+    
+    
+    <input type="hidden" th:field="*{idsoftware}">
+    
+     <div class="form-group col-md-2">
+                        <label for="Nombre">ID Equipo</label>
+                        <select th:field="*{idequipo}" class="form-control ">
+                            <option th:each="equipo:${equipo}"
+                            th:value="${equipo.idequipo}"
+                            th:text="${equipo.serie}"
+                            /> 
+                          </select>
+                    </div>
+    
+    	<div class="form-group col-md-6">
+      		<label for="nombre">Descripción</label>
+      		<input type="text" class="form-control" id="nombre" th:field="*{descripcion}">
+    	</div>
+    	<div class="form-group col-md-4">
+      		<label for="marca">Funcionalidad</label>
+      		<input type="text" class="form-control" id="marca" th:field="*{funcionalidad}">
+    	</div>
+ 	 </div>
+ 	 
+ 	 	<div class="form-row">
+    
+    	<div class="form-group col-md-6">
+      		<label for="marca">Licencia</label>
+      		<input type="text" class="form-control" id="marca" th:field="*{licencia}">
+    	</div>
+    	<div class="form-group col-md-6">
+      		<label for="modelo">Tipo</label>
+      		<input type="text" class="form-control" id="modelo" th:field="*{tipo}">
+    	</div>
+    	
+ 	 </div>
+ 	 
+ 	 	
+ 	 
+
+  <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+
+
+
+
+</div>
+
+
+<footer th:replace="plantilla/template :: footer">
+
+<script type="text/javascript" th:src="@{/js/jquery-3.5.1.slim.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+
+</footer>
+</body>
+</html>

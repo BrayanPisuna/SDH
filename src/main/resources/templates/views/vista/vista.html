@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="plantilla/template::head">
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+
+<body>
+
+<header th:replace="plantilla/template :: header"></header>
+
+	<div class="container">
+	
+	
+	<a class="btn btn-primary" th:href="@{/views/cargo/}" role="button">Périfericos a Cargo</a>
+    
+    <a class="btn btn-primary" th:href="@{/views/cargoequipo/}" role="button">Equipo a Cargo</a>
+	
+	
+	</div>
+
+
+
+
+<footer th:replace="plantilla/template :: footer">
+
+<script type="text/javascript" th:src="@{/js/jquery-3.5.1.slim.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+
+</footer>
+</body>
+</html>

@@ -1,0 +1,53 @@
+.container-fluid {
+    background-color: #FFBA5C;
+}
+
+.container-lg {
+    font-family: Arial, Helvetica, Sans-serif;
+    color: rgb(223, 213, 213);
+    background-color: rgb(200, 245, 253);
+    text-align: right;
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.containerdos {
+    position: absolute;
+    left: 150px;
+    top: 18px;
+}
+
+#sailorTableArea {
+    max-height: 300px;
+    overflow-x: auto;
+    overflow-y: auto;
+    color: azure;
+}
+
+#sailorTable {
+    white-space: nowrap;
+    color: rgb(31, 195, 236);
+}
+
+h3 {
+    color: rgb(184, 174, 174);
+}
+
+.collapse {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+table th {
+  text-align: center;
+}
+
+table tr {
+  text-align: center;
+}
+
